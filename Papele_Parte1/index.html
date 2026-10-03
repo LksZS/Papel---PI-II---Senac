@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papelê - Papelaria</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Papelê</h1>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="inicio">
+      <h2>Tudo para colocar suas ideias no papel.</h2>
+      <p>Materiais de papelaria para estudar, trabalhar e criar.</p>
+      <a class="botao" href="#produtos">Ver produtos</a>
+    </section>
+
+    <section id="produtos">
+      <h2>Produtos</h2>
+
+      <input id="busca" type="text" placeholder="Buscar produto...">
+
+      <div class="filtros">
+        <button data-categoria="Todos">Todos</button>
+        <button data-categoria="Escrita">Escrita</button>
+        <button data-categoria="Cadernos">Cadernos</button>
+        <button data-categoria="Mochilas">Mochilas</button>
+      </div>
+
+      <div id="lista" class="produtos"></div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <h2>Sobre a Papelê</h2>
+      <p>Uma papelaria criada para facilitar a escolha dos materiais do seu dia a dia.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Papelê - Projeto Integrador II</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
