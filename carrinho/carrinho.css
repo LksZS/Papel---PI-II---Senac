@@ -51,3 +51,4 @@ footer { padding: 25px 8%; background: #302b27; color: white; }
   .item .quantidade, .item .subtotal { grid-column: 2; text-align: left; }
   nav { flex-wrap: wrap; justify-content: center; }
 }
+[hidden] { display: none !important; }
