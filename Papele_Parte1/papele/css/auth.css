@@ -1,0 +1,12 @@
+.login, .cadastro { width: 460px; max-width: 92%; margin: 50px auto !important; padding: 36px !important;
+  background: white; border: 1px solid var(--borda); border-radius: 14px; box-shadow: 0 8px 28px rgba(48,43,39,.1); }
+main > .login, main > .cadastro { min-height: 0; }
+.login h2, .cadastro h2 { text-align: center; color: var(--marrom); margin: 0 0 26px; }
+.login form, .cadastro form { display: flex; flex-direction: column; gap: 6px; }
+.login label, .cadastro label { margin-top: 8px; font-size: 14px; font-weight: 600; }
+.login input, .cadastro input { padding: 12px; border: 1px solid #d5ccc2; border-radius: 8px; font: inherit; font-size: 15px; }
+.login input:focus, .cadastro input:focus { outline: 2px solid var(--marrom); outline-offset: 1px; border-color: var(--marrom); }
+.login button, .cadastro button { margin-top: 20px; border: 0; background: var(--escuro); color: white; padding: 13px; border-radius: 8px; cursor: pointer; font: inherit; transition: .2s; }
+.login button:hover, .cadastro button:hover { background: var(--marrom); }
+.login p { text-align: center; margin: 22px 0 0; color: var(--texto-suave); }
+.login p a { color: var(--marrom); font-weight: 600; }
