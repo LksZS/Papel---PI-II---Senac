@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Papelê - Carrinho</title>
-
-  <link rel="stylesheet" href="css/style.css">
+  <title>Carrinho - Papelaria</title>
   <link rel="stylesheet" href="css/carrinho.css">
 </head>
 <body>
   <header>
-    <h1><a href="index.html">✏️ Papelê</a></h1>
+    <h1>Papelaria</h1>
     <nav>
-      <a href="index.html">Início</a>
+      <!-- Ajuste os links para os nomes de arquivo/rotas do grupo -->
+      <a href="index.html#inicio">Início</a>
       <a href="index.html#produtos">Produtos</a>
-      <a href="index.html#sobre">Sobre</a>
-      <a href="carrinho.html" class="ativo">🛒 Carrinho (<span id="contador">0</span>)</a>
-      <a href="produtos.html">Manutenção</a>
       <a href="login.html">Login</a>
       <a href="clientes.html">Cadastro</a>
+      <a href="produtos.html">Manutenção</a>
+      <a href="carrinho.html">Carrinho (<span id="contador">0</span>)</a>
     </nav>
   </header>
 
@@ -26,15 +24,15 @@
     <section class="pagina">
       <h2>Seu carrinho</h2>
 
-  
+      <!-- Mostrado quando não há itens -->
       <div id="vazio" class="vazio" hidden>
         <p>Seu carrinho está vazio.</p>
         <a class="botao" href="index.html#produtos">Ver produtos</a>
-
+        <!-- Botão só para testar sem a página de produtos; remover na versão final -->
         <button id="exemplo" class="botao secundario" type="button">Adicionar itens de exemplo</button>
       </div>
 
-
+      <!-- Mostrado quando há itens -->
       <div id="conteudo" class="layout" hidden>
         <div id="itens" class="itens"></div>
 
@@ -51,10 +49,8 @@
     </section>
   </main>
 
-  <footer>
-    <p>Papelê - Projeto Integrador II · © 2026</p>
-  </footer>
-  <script src="js/usuario.js"></script>
+  <footer>© 2026 Papelaria</footer>
+
   <script src="js/carrinho.js"></script>
 </body>
 </html>

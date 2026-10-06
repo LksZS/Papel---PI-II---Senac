@@ -6,7 +6,7 @@ class Carrinho {
     this.itens = this.carregar();
   }
 
-  
+  // Lê o carrinho salvo (ou começa vazio)
   carregar() {
     try {
       return JSON.parse(localStorage.getItem(CHAVE_CARRINHO)) || [];
@@ -19,10 +19,11 @@ class Carrinho {
     try {
       localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(this.itens));
     } catch (erro) {
-      
+      // sem localStorage, o carrinho funciona só enquanto a página está aberta
     }
   }
 
+  // Se o produto já está no carrinho, soma 1; senão, cria o item com quantidade 1
   adicionar(produto) {
     const existente = this.itens.find(item => item.nome === produto.nome);
     if (existente) {
@@ -64,12 +65,9 @@ class Carrinho {
   }
 }
 
-
-// O carrinho exige login
-if (JSON.parse(localStorage.getItem("usuarioLogado")) === null) {
-  window.location = "login.html";
-}
-
+// ============================================================
+// TELA DO CARRINHO
+// ============================================================
 const carrinho = new Carrinho();
 
 const elVazio = document.getElementById("vazio");
@@ -84,7 +82,7 @@ function formatarPreco(valor) {
   return "R$ " + valor.toFixed(2).replace(".", ",");
 }
 
-
+// Redesenha a tela inteira a partir do estado do carrinho
 function mostrarCarrinho() {
   const temItens = carrinho.itens.length > 0;
 
@@ -117,7 +115,7 @@ function mostrarCarrinho() {
       </div>
     `;
 
-   
+    // textContent/dataset evitam problemas com aspas e caracteres especiais no nome
     card.querySelector("h3").textContent = item.nome;
     card.querySelector("small").textContent = item.categoria || "";
     card.querySelectorAll("button").forEach(b => (b.dataset.nome = item.nome));
@@ -126,7 +124,7 @@ function mostrarCarrinho() {
   });
 }
 
-
+// Um único "ouvinte" para todos os botões dos itens (delegação de eventos)
 elItens.addEventListener("click", evento => {
   const botao = evento.target.closest("button");
   if (!botao) return;
@@ -156,7 +154,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
   elMensagem.hidden = false;
 });
 
-
+// Apenas para testar a tela sem a página de produtos (remover na versão final)
 document.getElementById("exemplo").addEventListener("click", () => {
   carrinho.adicionar({ nome: "Caneta", categoria: "Escrita", preco: 4.90, imagem: "🖊️" });
   carrinho.adicionar({ nome: "Caderno", categoria: "Cadernos", preco: 24.90, imagem: "📓" });

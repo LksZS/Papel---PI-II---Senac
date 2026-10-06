@@ -173,7 +173,3 @@ th {
     grid-template-columns: 1fr;
   }
 }
-.formulario, .lista-admin { box-shadow: var(--sombra); }
-.formulario { position: sticky; top: 90px; }
-tbody tr:hover { background: #faf6f0; }
-@media (max-width: 800px) { .formulario { position: static; } }
